@@ -2,7 +2,12 @@
 name = "image_optimization"
 version = "0.1.0"
 edition = "2021"
-
+[lib]
+name = "resizer"
+path = "src/lib/mod.rs"
+[[bin]]
+name = "main"
+path = "./src/main.rs"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
