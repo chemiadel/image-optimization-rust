@@ -12,3 +12,4 @@ path = "./src/main.rs"
 
 [dependencies]
 actix-web = "4"
+image = "0.24.3"
