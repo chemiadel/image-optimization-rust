@@ -1,2 +1,2 @@
-mod errors;
-mod image_utils;
+pub mod errors ;
+pub mod image_utils;

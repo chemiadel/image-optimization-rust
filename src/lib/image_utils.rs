@@ -1,6 +1,6 @@
 use std::{fs, io};
 use std::path::PathBuf;
-use crate::lib::errors::ImageErrors;
+use crate::errors::ImageErrors;
 
 pub fn get_image(path : PathBuf) -> Result<Vec<PathBuf> , ImageErrors> {
     let inputs = fs::read_dir(path)
