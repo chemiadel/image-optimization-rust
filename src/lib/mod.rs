@@ -1,2 +1,2 @@
 pub mod errors ;
-pub mod image_utils;
+pub mod image_actor;

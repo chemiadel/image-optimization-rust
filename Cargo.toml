@@ -11,5 +11,6 @@ path = "./src/main.rs"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
+actix = "0.13.0"
 actix-web = "4"
 image = "0.24.3"
