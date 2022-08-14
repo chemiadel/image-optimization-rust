@@ -1,3 +1,4 @@
+use std::io::Cursor;
 use actix::{Actor, Handler, Message, SyncContext};
 use image::imageops::FilterType;
 use image::ImageResult;
@@ -21,11 +22,11 @@ impl Handler<ResizeRequest> for ResizeActor {
     fn handle(&mut self, msg: ResizeRequest, _: &mut Self::Context) -> Self::Result {
         let mut new_image_data = Vec::new(); // todo : init with capacity
         let image_mime = image::guess_format(&msg.data)?;
-        let resized_image = image::load_from_memory(
+        image::load_from_memory(
             &msg.data
         )?
-            .resize(msg.width , msg.height , FilterType::Nearest);
-        resized_image.write_to(&mut new_image_data, image_mime)?;
+            .resize(msg.width, msg.height, FilterType::Nearest)
+            .write_to(&mut Cursor::new(&mut new_image_data), image_mime)?;
         Ok(new_image_data)
     }
 }

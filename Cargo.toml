@@ -14,3 +14,6 @@ path = "./src/main.rs"
 actix = "0.13.0"
 actix-web = "4"
 image = "0.24.3"
+serde = { version = "1.0", features = ["derive"] }
+futures = "0.3"
+futures-util = "0.3"
